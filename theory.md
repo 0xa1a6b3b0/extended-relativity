@@ -14,7 +14,7 @@ This is how Einstein worked. He didn't start from abstract axioms. He started fr
 
 We will follow the same method, starting from the most familiar physics and drilling down until we reach bedrock.
 
-**The key result:** The entire framework culminates in a single equation—the *boundary field equation* □b = κρ_s—which provides a unified description of gravity and quantum mechanics. The boundary field gives the scalar sector (gravitational potential, g₀₀); the full tensor structure of general relativity follows from the economy principle via Einstein's equation, as derived in the main text. See "The Central Result" and "The Full Tensor Structure" sections.
+**The key result:** The framework introduces a single object—the *prime boundary field* b(x,t)—that has both continuous structure (smooth gradients → gravitational physics) and discrete structure (prime crossings → quantum physics). The boundary field equation □b = κρ_s governs the continuous/gravitational sector, reproducing Newtonian gravity and weak-field GR. The discrete prime structure motivates the quantum description of unresolved degrees of freedom. The unification is not that QFT is "derived from" the PDE, but that both GR and QFT describe the same underlying boundary viewed at different scales. See "The Central Result" and "The Full Tensor Structure" sections.
 
 ---
 
@@ -271,9 +271,11 @@ Prime frequencies only fully align at t = 0 and t = f₁ × f₂ (their product)
 
 **The encoding claim:**
 
-Primes are the unique basis where:
-- Multiplicative specification has unique representation (no ambiguity)
-- Frequency superposition has maximally recoverable components (no masking)
+Primes are the natural basis satisfying both:
+- **Multiplicative uniqueness:** Every positive integer has exactly one prime factorization (Fundamental Theorem of Arithmetic)
+- **Additive distinguishability:** Prime frequencies have maximally rare phase alignment (only at t = 0 and t = product), making superposed components recoverable
+
+**Formal criterion:** Any set satisfying (a) multiplicatively generates all positive integers, (b) is additively irreducible (no element is a sum of smaller elements in the set), and (c) is minimal, must be the primes. This follows from the FTA.
 
 This is a claim about **information encoding**, not about abstract mathematical irreducibility. We're not saying primes are "irreducible under addition" (which would be meaningless). We're saying prime frequencies are maximally distinguishable when superposed.
 
@@ -621,15 +623,17 @@ At the ℓ₀ = t₀ scale (Planck scale), the boundary itself becomes the objec
 
 ### The Equation
 
-The framework culminates in a single equation that unifies gravity and quantum mechanics:
+The framework culminates in a single equation governing the boundary field:
 
 $$\Box b = \kappa \rho_s$$
 
 where:
 - $b(x,t)$ is the prime boundary field
-- $\Box = \nabla^2 - (1/c^2)\partial^2/\partial t^2$ is the d'Alembertian
-- $\rho_s$ is specification density (energy-momentum in physical units)
+- $\Box = \nabla^2 - (1/c^2)\partial^2/\partial t^2$ is the d'Alembertian (flat-space form; see note below)
+- $\rho_s = T^{00}$ is specification density (energy density in the rest frame; more generally, the appropriate projection of the stress-energy tensor)
 - $\kappa = 4\pi G b_{ref}/c^4$ is the coupling constant
+
+**Technical note:** We use the flat-space □ as the weak-field/background limit. A fully geometric treatment would replace it with the covariant □_g built from the metric determined by the economy → Einstein equation route. For Newtonian/weak-field applications, the flat form suffices.
 
 **What the boundary field represents:**
 
@@ -637,25 +641,34 @@ The boundary field b(x,t) is the **total specification activity from all fields*
 
 **Crucially:** The absolute value of b is **gauge** (unknowable, like the absolute zero of gravitational potential). But the **gradient** ∂_μ b is **physical**—it determines the gravitational potential. The relationship to the full metric tensor requires additional structure from the economy principle, as explained below.
 
-The Higgs field specifically **pins the boundary** for massive particles, determining which allocations correspond to stable on-shell states. The Higgs VEV (246 GeV) is where the electroweak boundary gets fixed—why W/Z have mass while the photon remains massless.
+**Conjecture (Higgs mechanism):** The Higgs field may "pin the boundary" for massive particles, determining which allocations correspond to stable on-shell states. The Higgs VEV (246 GeV) would then mark where the electroweak boundary gets fixed—why W/Z have mass while the photon remains massless. The detailed mechanism remains to be worked out.
 
 ### What This Equation Gives
 
-**The metric (in Newtonian gauge, weak field):**
-$$g_{00} = -\left(1 - \frac{2\Delta b}{b_{ref}}\right), \quad g_{ij} = \left(1 + \frac{2\Delta b}{b_{ref}}\right)\delta_{ij}$$
+**The scalar metric sector (directly from b):**
+$$g_{00} = -\left(1 - \frac{2\Delta b}{b_{ref}}\right)$$
 
 where $\Delta b = b_{vac} - b(x,t)$ is the boundary dip below vacuum.
+
+**The spatial metric (from Einstein equation, not assumed):**
+$$g_{ij} = \left(1 + \frac{2\Delta b}{b_{ref}}\right)\delta_{ij}$$
+
+This form follows from solving Einstein's equation in the weak-field isotropic gauge—it's the GR prediction (PPN parameter γ = 1), consistent with light bending and Shapiro delay observations. We derive Einstein's equation from economy (Section N); this coefficient is a consequence, not an assumption.
 
 **Acceleration (from boundary gradient):**
 $$\vec{a} = c^2 \nabla\left(\frac{\Delta b}{b_{ref}}\right)$$
 
-**This equation produces:**
+**From the PDE □b = κρ_s:**
 - Newtonian gravity: $a = GM/r^2$
-- Weak-field Schwarzschild metric: $g_{00} = -(1 - 2GM/rc^2)$
-- QFT vertices (at discrete prime crossings)
-- Propagators (off-shell = between primes)
+- Weak-field Schwarzschild g₀₀: $g_{00} = -(1 - 2GM/rc^2)$
+
+**From the discrete prime structure of b (not from the PDE alone):**
+- QFT vertices: interpreted as discrete prime crossings (momentum exchange)
+- Propagators: interpreted as between-prime dynamics (off-shell states)
 
 **From scalar to tensor:** The boundary field b directly gives the scalar sector (g₀₀, gravitational potential). The full 10-component metric tensor comes from the economy principle: minimizing total specification (base + fiber) yields the Einstein-Hilbert action, which upon variation gives Einstein's equation for all metric components. See "The Full Tensor Structure" section for details.
+
+**The sense in which this unifies gravity and QM:** The boundary field b has two aspects—continuous (supporting smooth gradients → GR) and discrete (prime structure → QFT). The unification is not that QFT is "derived from" the PDE, but that both descriptions refer to the same underlying object viewed at different scales.
 
 ### Verification
 
