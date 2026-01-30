@@ -14,7 +14,7 @@ This is how Einstein worked. He didn't start from abstract axioms. He started fr
 
 We will follow the same method, starting from the most familiar physics and drilling down until we reach bedrock.
 
-**The key result:** The entire framework culminates in a single equation—the *boundary field equation* □b = κρ_s—which provides a unified description of gravity and quantum mechanics. The prime boundary is a 4D surface embedded in 5D specification space; the induced metric and extrinsic curvature (∂_μ ∂_ν b) give the full 10-component Einstein tensor via the Gauss equation. Both gravitational wave polarizations emerge from the transverse profile of b. See "The Central Result" and "The Full Tensor Structure" sections for derivation.
+**The key result:** The entire framework culminates in a single equation—the *boundary field equation* □b = κρ_s—which provides a unified description of gravity and quantum mechanics. The boundary field gives the scalar sector (gravitational potential, g₀₀); the full tensor structure of general relativity follows from the economy principle via Einstein's equation, as derived in the main text. See "The Central Result" and "The Full Tensor Structure" sections.
 
 ---
 
@@ -603,8 +603,8 @@ At the ℓ₀ = t₀ scale (Planck scale), the boundary itself becomes the objec
 | Why F = ma? | Boundary gradient ∇b = acceleration; economy minimizes disagreement |
 | Why extremize action? | S/ℏ counts fiber cycles; economy minimizes specification cost |
 | Why is c universal? | ℓ₀ = t₀ must be universal; ds² must be invariant |
-| What is the metric? | Induced metric on boundary surface; full G_μν from Gauss equation |
-| Why gravitational waves? | Transverse profile of b gives both + and × polarizations |
+| What is the metric? | g₀₀ from boundary field; full tensor from economy → Einstein equation |
+| Why gravitational waves? | Preliminary: transverse profile of b suggestive; needs verification |
 | Why 4D at classical scale? | Boundary position ~137 resolves 4 effective dimensions |
 | What is gravitational potential? | Φ ∝ (b_vacuum - b)/b_vacuum |
 | What is acceleration? | ∇b = gradient of boundary field |
@@ -635,7 +635,7 @@ where:
 
 The boundary field b(x,t) is the **total specification activity from all fields** at each spacetime point—electromagnetic, weak, strong, gravitational, Higgs, etc. It is not one field among many; it is the unified description of all field activity.
 
-**Crucially:** The absolute value of b is **gauge** (unknowable, like the absolute zero of gravitational potential). But the **gradient** ∂_μ b is **physical**—it IS the metric. The outer product ∂_μ b ∂_ν b gives a symmetric tensor with 10 independent components, exactly matching the metric tensor in 4D.
+**Crucially:** The absolute value of b is **gauge** (unknowable, like the absolute zero of gravitational potential). But the **gradient** ∂_μ b is **physical**—it determines the gravitational potential. The relationship to the full metric tensor requires additional structure from the economy principle, as explained below.
 
 The Higgs field specifically **pins the boundary** for massive particles, determining which allocations correspond to stable on-shell states. The Higgs VEV (246 GeV) is where the electroweak boundary gets fixed—why W/Z have mass while the photon remains massless.
 
@@ -655,7 +655,7 @@ $$\vec{a} = c^2 \nabla\left(\frac{\Delta b}{b_{ref}}\right)$$
 - QFT vertices (at discrete prime crossings)
 - Propagators (off-shell = between primes)
 
-**Tensor structure:** The boundary is a 4D surface in 5D specification space. The induced metric (∂_μ b ∂_ν b) and extrinsic curvature (∂_μ ∂_ν b) together produce the full Einstein tensor via the Gauss equation. Both gravitational wave polarizations emerge from the transverse profile of b. See "The Full Tensor Structure" section for the complete derivation.
+**From scalar to tensor:** The boundary field b directly gives the scalar sector (g₀₀, gravitational potential). The full 10-component metric tensor comes from the economy principle: minimizing total specification (base + fiber) yields the Einstein-Hilbert action, which upon variation gives Einstein's equation for all metric components. See "The Full Tensor Structure" section for details.
 
 ### Verification
 
@@ -682,54 +682,44 @@ The boundary field equation reproduces the **Newtonian limit** of general relati
 
 Einstein's equation $G_{\mu\nu} = (8\pi G/c^4) T_{\mu\nu}$ is a tensor equation with 10 independent components.
 
-**The embedding picture:**
+**How does a scalar field produce tensor structure?**
 
-The boundary is a 4D hypersurface w = b(x^μ) embedded in 5D specification space.
+The answer has two parts:
 
-With 5D coordinates (x^μ, w) and flat ambient metric G_AB = diag(η_μν, 1), the key geometric quantities are:
+**Part 1: The economy principle gives Einstein's equation**
 
-**Induced metric** (from the embedding):
+The economy principle says: minimize total specification (geometric + matter). This is the Einstein-Hilbert action:
+$$S = \int (R + \mathcal{L}_{matter}) \sqrt{-g} \, d^4x$$
+
+Varying this with respect to the full metric g_μν (all 10 components) yields Einstein's equation. The boundary field b provides the scalar sector (g₀₀, gravitational potential); the full tensor structure comes from this variational principle.
+
+**Part 2: An embedding picture (suggestive but incomplete)**
+
+There is an intriguing geometric picture: the boundary as a 4D hypersurface w = b(x^μ) embedded in 5D specification space. With flat ambient metric G_AB = diag(η_μν, 1):
+
+**Induced metric:**
 $$g_{\mu\nu} = \eta_{\mu\nu} + \partial_\mu b \, \partial_\nu b$$
 
-**Extrinsic curvature** (how the surface bends in 5D):
+**Extrinsic curvature:**
 $$K_{\mu\nu} = \frac{\partial_\mu \partial_\nu b}{\sqrt{1 + \partial_\alpha b \, \partial^\alpha b}}$$
 
-This is a symmetric tensor with **10 independent components**.
-
-**The Gauss equation** (relates 4D curvature to extrinsic curvature):
-
-For a hypersurface in flat 5D:
+The Gauss equation relates 4D curvature to K_μν:
 $$R^{(4)}_{\mu\nu\rho\sigma} = K_{\mu\rho} K_{\nu\sigma} - K_{\mu\sigma} K_{\nu\rho}$$
 
-**The Ricci tensor:**
-$$R^{(4)}_{\mu\nu} = K_{\mu\nu} K - K_{\mu\rho} K^\rho_\nu$$
+**Important caveat:** While K_μν is a symmetric tensor, it has constraints as a Hessian (∂_μ∂_νb = ∂_ν∂_μb are not independent equations). The induced metric g_μν = η_μν + ∂_μb∂_νb is also constrained—it's a rank-1 perturbation of flat space. So this embedding does NOT give arbitrary 10 DOF.
 
-where K = g^μν K_μν is the trace.
+The embedding picture is suggestive and may point toward a deeper structure, but the rigorous route to full GR is through economy → Einstein-Hilbert action → Einstein equation.
 
-**The Einstein tensor:**
-$$G^{(4)}_{\mu\nu} = R^{(4)}_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R^{(4)}$$
+**Gravitational waves:**
 
-**This gives the full 10-component Einstein tensor from the scalar boundary field via ∂_μ ∂_ν b.**
-
-**Gravitational waves from boundary oscillations:**
-
-For a wave propagating in z with transverse profile b = B(x,y) cos(ωt - kz):
+In the embedding picture, transverse oscillations of b (with profile varying in x,y) produce metric perturbations:
 
 | Derivative | Component | Polarization |
 |------------|-----------|--------------|
 | ∂²b/∂x² - ∂²b/∂y² | h_xx - h_yy | + mode |
 | ∂²b/∂x∂y | h_xy | × mode |
 
-The second derivatives naturally give both gravitational wave polarizations.
-
-**Strong-field structure:**
-
-1. Matter/energy sources □b = κρ_s (the boundary field equation)
-2. This determines b(x) and hence K_μν = ∂_μ ∂_ν b / N
-3. The Gauss equation gives R_μνρσ from K_μν
-4. Contracting gives G_μν
-
-The Einstein equation emerges from the geometry of the embedded boundary surface.
+This is suggestive but requires more careful analysis to confirm it reproduces the full structure of linearized GR gravitational waves.
 
 **Summary of tensor structure:**
 
@@ -801,117 +791,77 @@ Both branches emerge from the same underlying equation. The apparent incompatibi
 
 ## The Full Tensor Structure: From Scalar to Einstein
 
-The boundary field equation □b = κρ_s involves a scalar. How does this produce the full 10-component tensor structure of general relativity, including gravitational waves?
+The boundary field equation □b = κρ_s involves a scalar. How does this produce the full 10-component tensor structure of general relativity?
 
-**The key insight:** The prime boundary is a 4D hypersurface embedded in 5D specification space. The spacetime metric IS the induced metric on this surface, and the full Einstein tensor emerges from the geometry of the embedding.
+**The primary route: economy → Einstein's equation**
 
-### Setup
+The economy principle (minimize total specification) leads to the Einstein-Hilbert action. Varying this action with respect to all 10 components of g_μν yields Einstein's equation. The boundary field b directly gives the scalar sector (g₀₀, gravitational potential); the full tensor structure comes from this variational principle applied to total specification.
 
-Consider 5D specification space with coordinates (x^μ, w) where:
-- x^μ are the four spacetime coordinates (μ = 0,1,2,3)
-- w is the "prime direction" (specification depth)
+### The Observer's Economy Calculation
 
-The 5D ambient metric is flat:
-$$G_{AB} = \text{diag}(\eta_{\mu\nu}, 1) = \text{diag}(-1, 1, 1, 1, 1)$$
+At any point Q where matter exists, the observer faces a specification cost with two components:
 
-The prime boundary is the 4D surface defined by:
-$$w = b(x^\mu)$$
+1. **Base cost (spatial):** Specifying positions in curved spatial geometry. More spatial curvature requires more prime frequencies to encode the structure.
 
-### The Induced Metric
+2. **Fiber cost (temporal):** Specifying internal state evolution via bit flip rate.
 
-The embedding maps 4D coordinates to 5D: X^A(x) = (x^μ, b(x))
+The observer minimizes TOTAL specification, which means finding the geometry (all components g_μν) that balances:
+- Time dilation: Stretching time at Q reduces bit flip rate per coordinate second
+- Spatial curvature: Curving space changes how base positions are specified
+- Neither curved MORE than necessary
 
-The tangent vectors to the surface are:
-$$e_\mu^A = \frac{\partial X^A}{\partial x^\mu} = (\delta_\mu^\nu, \partial_\mu b)$$
+This gives Einstein's equation—10 equations determining 10 metric components simultaneously.
 
-The induced metric on the surface is:
-$$g_{\mu\nu} = G_{AB} \, e_\mu^A e_\nu^B = \eta_{\mu\nu} + \partial_\mu b \, \partial_\nu b$$
+### An Embedding Picture (Research Direction)
 
-**This is the spacetime metric.** It automatically has 10 independent components from the structure of the embedding.
+There is a suggestive geometric picture worth exploring: the boundary as a 4D hypersurface w = b(x^μ) embedded in 5D specification space.
 
-### The Extrinsic Curvature
+**Setup:**
+- 5D coordinates (x^μ, w)
+- Flat ambient metric G_AB = diag(-1, 1, 1, 1, 1)
+- Boundary surface: w = b(x^μ)
 
-The surface curves within the 5D space. This curvature is measured by the extrinsic curvature tensor:
+**Induced metric:**
+$$g_{\mu\nu} = \eta_{\mu\nu} + \partial_\mu b \, \partial_\nu b$$
 
+**Extrinsic curvature:**
 $$K_{\mu\nu} = \frac{\partial_\mu \partial_\nu b}{\sqrt{1 + (\partial b)^2}}$$
 
-For weak fields (|∂b| << 1):
-$$K_{\mu\nu} \approx \partial_\mu \partial_\nu b$$
-
-**The extrinsic curvature is a symmetric tensor with 10 independent components**—the second derivatives of the scalar b.
-
-### The Gauss Equation: Intrinsic from Extrinsic
-
-The Gauss equation relates the intrinsic 4D curvature (what inhabitants of the surface measure) to the extrinsic curvature (how the surface bends in 5D):
-
-$$R^{(4)}_{\mu\nu\rho\sigma} = R^{(5)}_{ABCD} \, e_\mu^A e_\nu^B e_\rho^C e_\sigma^D + K_{\mu\rho} K_{\nu\sigma} - K_{\mu\sigma} K_{\nu\rho}$$
-
-For flat 5D specification space (R^(5) = 0):
+**Gauss equation:**
 $$R^{(4)}_{\mu\nu\rho\sigma} = K_{\mu\rho} K_{\nu\sigma} - K_{\mu\sigma} K_{\nu\rho}$$
 
-**The 4D Riemann curvature tensor is entirely determined by the extrinsic curvature—by the second derivatives of b.**
+**Important limitations:**
 
-### The Einstein Tensor
+1. The induced metric g_μν = η_μν + ∂_μb∂_νb is a very special class of metrics (a rank-1 perturbation of Minkowski). Generic GR metrics are not of this form.
 
-Contracting the Gauss equation:
+2. The extrinsic curvature K_μν = ∂_μ∂_νb is a Hessian with integrability constraints—it is not arbitrary 10-DOF data.
 
-**Ricci tensor:**
-$$R_{\mu\nu} = K_{\mu\nu} K - K_{\mu\rho} K^\rho_\nu$$
+3. The boundary equation □b = κρ_s constrains only the trace K = □b. Additional equations or conditions would be needed to determine the remaining components.
 
-where K = g^μν K_μν ≈ □b is the trace.
+**Status:** The embedding picture is mathematically interesting and may point toward a deeper structure (similar to brane-world models), but it requires additional development to reproduce full GR. The primary derivation of tensor structure remains: economy → Einstein-Hilbert action → Einstein equation.
 
-**Ricci scalar:**
-$$R = K^2 - K_{\mu\nu} K^{\mu\nu}$$
+### Gravitational Waves (Preliminary)
 
-**Einstein tensor:**
-$$G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = K_{\mu\nu} K - K_{\mu\rho} K^\rho_\nu - \frac{1}{2}g_{\mu\nu}(K^2 - K_{\alpha\beta}K^{\alpha\beta})$$
+In the embedding picture, transverse oscillations of b produce metric perturbations suggestive of gravitational waves:
 
-**The full 10-component Einstein tensor emerges from the second derivatives of the scalar boundary field.**
+For b(t,x,y,z) = ε f(x,y) cos(ω(t - z/c)):
 
-### Gravitational Waves
+| Transverse profile | Perturbation pattern | Suggestive of |
+|-------------------|---------------------|---------------|
+| f = x² - y² | K_xx = -K_yy | + polarization |
+| f = xy | K_xy ≠ 0, K_xx = K_yy = 0 | × polarization |
 
-This structure naturally produces gravitational wave polarizations.
+**Caveat:** A careful analysis is needed to verify this reproduces the full structure of linearized GR gravitational waves (two TT modes as linear solutions of vacuum Einstein). The relationship between scalar field oscillations and metric perturbations requires further work.
 
-For a wave propagating in the z-direction with transverse structure:
-$$b(t,x,y,z) = \varepsilon \, f(x,y) \cos(\omega(t - z/c))$$
+### Summary
 
-The extrinsic curvature components:
+| Route to tensor structure | Status |
+|--------------------------|--------|
+| Economy → Einstein-Hilbert → Einstein equation | Derived (Section N) |
+| Embedding → Gauss equation → curvature | Suggestive, limitations noted |
+| Gravitational waves from embedding | Preliminary, needs verification |
 
-**+ polarization:** f = x² - y²
-- K_xx = 2ε cos(...), K_yy = -2ε cos(...), K_xy = 0
-- Transverse and traceless ✓
-
-**× polarization:** f = xy
-- K_xx = 0, K_yy = 0, K_xy = ε cos(...)
-- Transverse and traceless ✓
-
-**Both gravitational wave polarizations emerge from the transverse profile of the scalar boundary field!**
-
-In vacuum (□b = 0):
-$$\Box K_{\mu\nu} = \Box(\partial_\mu \partial_\nu b) = \partial_\mu \partial_\nu (\Box b) = 0$$
-
-The extrinsic curvature satisfies the wave equation—gravitational waves propagate at c.
-
-### The Complete Correspondence
-
-| GR Quantity | Boundary Expression |
-|-------------|---------------------|
-| Metric g_μν | η_μν + ∂_μ b ∂_ν b (induced metric) |
-| Extrinsic curvature K_μν | ∂_μ ∂_ν b (second derivatives) |
-| Riemann R_μνρσ | K_μρ K_νσ - K_μσ K_νρ (Gauss equation) |
-| Ricci tensor R_μν | K_μν K - K_μρ K^ρ_ν |
-| Einstein tensor G_μν | Full expression from K_μν |
-| GW + polarization | b ~ (x² - y²) cos(ω(t-z/c)) |
-| GW × polarization | b ~ xy cos(ω(t-z/c)) |
-
-### Why This Works
-
-The boundary field equation □b = κρ_s constrains the **trace** of the extrinsic curvature:
-$$K = \Box b = \kappa \rho_s$$
-
-The Gauss-Codazzi equations then propagate this constraint to the full Einstein tensor. This is the same mathematics used in brane-world models, where 4D Einstein gravity emerges on a surface embedded in higher-dimensional space.
-
-**The scalar boundary field produces the complete tensor structure of general relativity through the geometry of its embedding in specification space.**
+The robust claim: the scalar boundary field b encodes the gravitational potential and g₀₀. The full 10-component metric follows from applying the economy principle to total specification, which uniquely yields Einstein's equation.
 
 ---
 
@@ -1037,10 +987,13 @@ The result is a unified framework where:
 **What is established:** 
 - The conceptual unification
 - The boundary field equation □b = κρ_s
-- Recovery of Newtonian gravity and weak-field Schwarzschild metric
-- Full 10-component tensor structure (from embedded surface geometry)
-- Gravitational wave polarizations (from transverse profile of b)
+- Recovery of Newtonian gravity and weak-field Schwarzschild g₀₀
+- Full tensor structure via economy → Einstein equation (Section N)
 - Scale-dependent dimensionality (more dimensions resolved at lower boundary)
+
+**What is suggestive but requires more work:**
+- The 5D embedding picture (Gauss equation approach has limitations)
+- Gravitational wave polarizations from transverse b profile (needs verification against linearized GR)
 
 **What is postulated:** One swap = ℏ. The prime encoding claim (argued but not proven).
 
@@ -1106,17 +1059,17 @@ $$g_{00} = -\left(1 - \frac{2\Delta b}{b_{ref}}\right), \quad g_{ij} = \delta_{i
 
 $$a = c² \frac{\nabla b}{b_{ref}}$$
 
-**Verification - Schwarzschild:**
+**Verification - Schwarzschild g₀₀:**
 
 For a static point mass M, solve $\nabla²b = \kappa Mc² \delta³(r)$:
 
 $$\Delta b(r) = \frac{\kappa Mc²}{4\pi r} = \frac{GM \cdot b_{ref}}{rc²}$$
 
-The metric:
+The scalar metric sector:
 
 $$g_{00} = -\left(1 - \frac{2GM}{rc²}\right)$$
 
-This IS the Schwarzschild metric.
+This matches the Schwarzschild g₀₀ component. The full metric (including g_rr) follows from Einstein's equation with spherical symmetry (Birkhoff's theorem).
 
 The acceleration:
 
@@ -1130,11 +1083,11 @@ Einstein's equation $G_{\mu\nu} = (8\pi G/c⁴)T_{\mu\nu}$ has 10 independent co
 
 **How does a scalar give 10 components?**
 
-The boundary value b is gauge. But the gradient ∂_μ b has 4 components, and the outer product ∂_μ b ∂_ν b is a symmetric tensor with **exactly 10 independent components**.
+The boundary field b directly gives the scalar sector (g₀₀, gravitational potential). The full 10-component tensor comes from the economy principle: minimizing total specification (base + fiber) yields the Einstein-Hilbert action, which upon variation with respect to all metric components gives Einstein's equation.
 
-The metric: $g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}(\partial b)$
+For weak fields, the metric can be written as: $g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$
 
-For weak fields: $h_{\mu\nu} \propto \partial_\mu b \, \partial_\nu b$
+The scalar sector (h₀₀) is determined by b. The remaining components follow from Einstein's equation.
 
 **Scale-dependent dimensionality:**
 
@@ -1271,7 +1224,7 @@ ds² = -c²dt² + dx² + dy² + dz²
 
 R_μν - ½g_μν R = (8πG/c⁴) T_μν
 
-*Note: The boundary surface embedding in 5D gives the full Einstein tensor via the Gauss equation. The extrinsic curvature K_μν = ∂_μ ∂_ν b provides 10 components. Both GW polarizations emerge from the transverse profile of b.*
+*Note: The full Einstein tensor follows from the economy principle (minimize total specification), which yields the Einstein-Hilbert action. The embedding picture (boundary surface in 5D, Gauss equation) is suggestive but has limitations—see "The Full Tensor Structure" section.*
 
 **Action:**
 
